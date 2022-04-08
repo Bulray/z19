@@ -1,3 +1,4 @@
+
 HASH_NAME: str = 'sha256'
 HASH_SALT: str = 'salt_sol'
 HASH_GEN_ITERATIONS: int = 1000

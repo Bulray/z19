@@ -3,15 +3,16 @@ import hashlib
 from flask import request, current_app
 from flask_restx import abort
 from typing import Dict
-from application import constants
+import constants
 from datetime import datetime, timedelta
 import jwt
-from application.dao.auth import AuthDAO
+from dao.auth import AuthDAO
+from dao.users import UserDAO
 
 auth_dao = AuthDAO()
 
 
-def get_hash_passwoerd(password: str) -> str:
+def get_hash_password(password: str) -> str:
     hashed_password: bytes = hashlib.pbkdf2_hmac(
         hash_name=constants.HASH_NAME,
         salt=constants.HASH_SALT.encode('utf=8'),
