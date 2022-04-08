@@ -1,4 +1,9 @@
 class AuthDAO:
+
+    def __init__(self, session):
+        self.session = session
+
+
     def create(self, data):
         auth = User(**data)
         self.session.add(Auth)
